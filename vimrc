@@ -1,11 +1,12 @@
+set nocompatible
 
-set nocompatible  " We don't want vi compatibility.
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+filetype on
 
-filetype on  " Automatically detect file types.
+syntax enable
  
-" Add recently accessed projects menu (project plugin)
-set viminfo^=!
-
 let mapleader=","
 
 " maps esc to break out of autocompletion and reset to 
@@ -23,11 +24,9 @@ map <silent> <m-n> :cn <cr>
 " mapping for modified recently menu to \r
 map <silent> <Leader>r :MRU<cr>
 
-nmap <silent> Q <Leader>bd<CR>
+nmap <silent> Q :Kwbd<CR>
 
 nmap ZZ :qa<CR>
-
-map <silent> <space> <C-6>
 
 set cf  " Enable error files & error jumping.
 set clipboard+=unnamed  " Yanks go on clipboard instead.
@@ -72,10 +71,9 @@ autocmd QuickfixCmdPost grep,vimgrep,make cw
 
 let g:plaintex_delimiters = 0
 
-highlight Pmenu ctermbg=238 gui=bold
-"highlight Pmenu ctermfg=0 ctermbg=3 
-highlight PmenuSel ctermfg=0 ctermbg=7 
-highlight Normal ctermbg=black
+hi Pmenu ctermbg=238 ctermfg=0 gui=bold
+hi PmenuSel ctermfg=0 ctermbg=7 
+hi Normal ctermbg=black
 
 " left/right arrows change buffers
 map <silent> <C-right> :bn<CR>
@@ -163,16 +161,11 @@ set sidescroll=1
 filetype plugin on
 filetype indent on
 
-"turn on syntax highlighting
-syntax on
-set t_Co=256
-
 "hide buffers when not displayed
 set hidden
 
 " note for whatever reason ttymouse must be set after term is set
 " or it will cause problems with the terminal
-set ttymouse=xterm2
 
 set mousehide  " Hide mouse after chars typed
 set mouse=a  " Mouse in all modes
@@ -207,22 +200,9 @@ function! SetCursorPosition()
     end
 endfunction
 
-" overcome
-"cmap W %!sudo tee > /dev/null %
-
 " command to get urls
-let g:netrw_http_cmd = "wget -q -O"
+"let g:netrw_http_cmd = "wget -q -O"
 
-" yes, GLVS, install what you download
-let g:GetLatestVimScripts_allowautoinstall=1
-
-colorscheme vilight
-"colorscheme sand
-"colorscheme breeze
-"colorscheme blackdust
-"colorscheme vividchalk
-"colorscheme fnaqevan " like dante but more pastel and less contrast
-"colorscheme vibrantink " multi, high contrast
 
 "-------------------------------------------------------------------------------
 " Minibuffer Explorer Settings
@@ -234,7 +214,6 @@ let g:miniBufExplMapCTabSwitchBufs=1
 let g:miniBufExplorerMoreThanOne=1 
 let g:miniBufExplMaxSize=2
 let g:miniBufExplTabWrap=1
-
 
 "-------------------------------------------------------------------------------
 " Rails.vim
@@ -323,39 +302,18 @@ let g:SuperTabDefaultCompletionType='context'
 let g:buftabs_only_basename=1
 
 "-------------------------------------------------------------------------------
+" Solarized
+"-------------------------------------------------------------------------------
+
+let g:solarized_termcolors=256
+
+"-------------------------------------------------------------------------------
 " NeoComplCache 
 "-------------------------------------------------------------------------------
 
-"Use neocomplcache.
-"let g:NeoComplCache_EnableAtStartup = 1
-"Use smartcase.
-"let g:NeoComplCache_SmartCase = 1
-"Use camel case completion.
-"let g:NeoComplCache_EnableCamelCaseCompletion = 1
-"Use underbar completion.
-"let g:NeoComplCache_EnableUnderbarCompletion = 1
-"Set minimum syntax keyword length.
-"let g:NeoComplCache_MinSyntaxLength = 3
-
-"Define dictionary.
-"let g:NeoComplCache_DictionaryFileTypeLists = {
-    "\ 'default' : '',
-    "\ 'vimshell' : $HOME.'/.vimshell_hist',
-    "\ 'scheme' : $HOME.'/.gosh_completions'
-    "\ }
-
-"Define keyword.
-"if !exists('g:NeoComplCache_KeywordPatterns')
-    "let g:NeoComplCache_KeywordPatterns = {}
-"endif
-"let g:NeoComplCache_KeywordPatterns['default'] = '\h\w*'
-
-"Plugin key-mappings.
-"imap <C-l>     <Plug>(neocomplcache_snippets_expand)
-"smap <C-l>     <Plug>(neocomplcache_snippets_expand)
-"inoremap <expr><C-h> pumvisible() ? '\<C-y>\<C-h>' : '\<C-h>'
-"inoremap <expr><C-g>     neocomplcache#undo_completion()
-"inoremap <expr><C-l>     neocomplcache#complete_common_string()
-
 let g:CSApprox_hook_post = ['hi Normal  ctermbg=NONE ctermfg=NONE',
                           \ 'hi NonText ctermbg=NONE ctermfg=NONE' ]
+
+
+colo vilight
+"colo solarized
