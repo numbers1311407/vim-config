@@ -200,10 +200,6 @@ function! SetCursorPosition()
     end
 endfunction
 
-" command to get urls
-"let g:netrw_http_cmd = "wget -q -O"
-
-
 "-------------------------------------------------------------------------------
 " Minibuffer Explorer Settings
 "-------------------------------------------------------------------------------
@@ -247,12 +243,13 @@ let g:fuzzy_ignore = "gems/*;*.pyc;*.log;*.swf;*.fla"
 
 nnoremap <silent> <C-n>      :FufBuffer<CR>
 nnoremap <silent> <C-p>      :FufFileWithCurrentBufferDir<CR>
-nnoremap <silent> <C-f><C-p> :FufFileWithFullCwd<CR>
-nnoremap <silent> <C-f>p     :FufFile<CR>
-nnoremap <silent> <C-f>d     :FufDirWithCurrentBufferDir<CR>
-nnoremap <silent> <C-f><C-d> :FufDirWithFullCwd<CR>
-nnoremap <silent> <C-f>D     :FufDir<CR>
-nnoremap <silent> <C-f>r     :FufMruFile<CR>
+nnoremap <silent> <C-f>      :FufFile<CR>
+
+"nnoremap <silent> <C-f><C-p> :FufFileWithFullCwd<CR>
+"nnoremap <silent> <C-f>d     :FufDirWithCurrentBufferDir<CR>
+"nnoremap <silent> <C-f><C-d> :FufDirWithFullCwd<CR>
+"nnoremap <silent> <C-f>D     :FufDir<CR>
+"nnoremap <silent> <C-f>r     :FufMruFile<CR>
 
 "nnoremap <silent> <C-f><C-t> :FufTag<CR>
 "nnoremap <silent> <C-f>t     :FufTag!<CR>
@@ -311,9 +308,11 @@ let g:solarized_termcolors=256
 " NeoComplCache 
 "-------------------------------------------------------------------------------
 
-let g:CSApprox_hook_post = ['hi Normal  ctermbg=NONE ctermfg=NONE',
-                          \ 'hi NonText ctermbg=NONE ctermfg=NONE' ]
+"let g:CSApprox_hook_post = ['hi Normal  ctermbg=NONE ctermfg=NONE',
+                          "\ 'hi NonText ctermbg=NONE ctermfg=NONE' ]
 
 
-colo vilight
+"colo twilight256
+colo jellybeans
+"colo vilight
 "colo solarized

@@ -67,3 +67,9 @@
 [submodule "tabular"]
 	path = bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
+[submodule "bundle/colors-jellybeans"]
+	path = bundle/colors-jellybeans
+	url = git://github.com/nanotech/jellybeans.vim.git
+[submodule "bundle/colors-twilight256"]
+	path = bundle/colors-twilight256
+	url = git://github.com/vim-scripts/twilight256.vim.git
