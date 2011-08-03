@@ -9,6 +9,13 @@ syntax enable
  
 let mapleader=","
 
+call arpeggio#map('i', '', 0, 'jk', '<Esc>')
+
+call arpeggio#map('n', '', 0, 'wj', '<C-w><C-j>')
+call arpeggio#map('n', '', 0, 'wk', '<C-w><C-k>')
+call arpeggio#map('n', '', 0, 'wl', '<C-w><C-l>')
+call arpeggio#map('n', '', 0, 'wh', '<C-w><C-h>')
+
 " maps esc to break out of autocompletion and reset to 
 " original word
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
@@ -18,11 +25,8 @@ set smartcase
 
 " alt+n or alt+p to navigate between entries in QuickFix
 " (this isn't working, think it's a shell thing with alt)
-map <silent> <m-p> :cp <cr>
-map <silent> <m-n> :cn <cr>
-
-" mapping for modified recently menu to \r
-map <silent> <Leader>r :MRU<cr>
+nnoremap <silent> <M-p> :cp <cr>
+nnoremap <silent> <M-n> :cn <cr>
 
 nmap <silent> Q :Kwbd<CR>
 
@@ -305,14 +309,15 @@ let g:buftabs_only_basename=1
 let g:solarized_termcolors=256
 
 "-------------------------------------------------------------------------------
-" NeoComplCache 
+" Gundo
 "-------------------------------------------------------------------------------
+
+nnoremap U :GundoToggle<CR>
 
 "let g:CSApprox_hook_post = ['hi Normal  ctermbg=NONE ctermfg=NONE',
                           "\ 'hi NonText ctermbg=NONE ctermfg=NONE' ]
 
-
 "colo twilight256
-colo jellybeans
-"colo vilight
+"colo jellybeans
+colo vilight
 "colo solarized

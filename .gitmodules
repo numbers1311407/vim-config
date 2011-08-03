@@ -79,3 +79,9 @@
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
+[submodule "bundle/ack"]
+	path = bundle/ack
+	url = http://github.com/vim-scripts/ack.vim.git
+[submodule "bundle/colors-maroloccio"]
+	path = bundle/colors-maroloccio
+	url = http://github.com/vim-scripts/maroloccio.git
