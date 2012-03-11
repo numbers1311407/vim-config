@@ -44,5 +44,7 @@ AddTabularPattern! pascal_assign /:=/l1
 
 AddTabularPattern! trailing_c_comments /\/\*\|\*\/\|\/\//l1
 
+AddTabularPattern! css_rules /\zs:/l1l1r0
+
 let &cpo = s:save_cpo
 unlet s:save_cpo

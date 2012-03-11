@@ -9,13 +9,6 @@ syntax enable
  
 let mapleader=","
 
-call arpeggio#map('i', '', 0, 'jk', '<Esc>')
-
-call arpeggio#map('n', '', 0, 'wj', '<C-w><C-j>')
-call arpeggio#map('n', '', 0, 'wk', '<C-w><C-k>')
-call arpeggio#map('n', '', 0, 'wl', '<C-w><C-l>')
-call arpeggio#map('n', '', 0, 'wh', '<C-w><C-h>')
-
 " maps esc to break out of autocompletion and reset to 
 " original word
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
@@ -39,7 +32,7 @@ set autowrite  " Writes on make/shell commands
 set ruler  " Ruler on
 set nu  " Line numbers on
 set nowrap  " Line wrapping off
-set timeoutlen=500 " Time to wait after ESC (default causes an annoying delay)
+set timeoutlen=400
 
 " Formatting (some of these are for coding in C and C++)
 set ts=2  " Tabs are 2 spaces
@@ -82,8 +75,8 @@ hi Normal ctermbg=black
 " left/right arrows change buffers
 map <silent> <C-right> :bn<CR>
 map <silent> <C-left> :bp<CR>
-map <silent> <C-h> :bp<CR>
-map <silent> <C-l> :bn<CR>
+map <silent> H :bp<CR>
+map <silent> L :bn<CR>
 
 " comma+dir for directional buffer nav
 nmap ,k <C-W>k
@@ -91,8 +84,8 @@ nmap ,j <C-W>j
 nmap ,h <C-W>h
 nmap ,l <C-W>l
 
-nmap <C-j> <C-d>
-nmap <C-k> <C-u>
+"nmap <C-j> <C-d>
+"nmap <C-k> <C-u>
 
 ",s to pull word under cursor into a search/replace (global)
 nmap ,s :%s/<c-r><c-w>//g<Left><Left>
@@ -103,19 +96,20 @@ set linebreak   "wrap lines at convenient points
 
 "statusline setup
 set statusline+=%n:   "buffer number
-set statusline+=%f\   "relative filename
+set statusline+=%f   "relative filename
 
 "display a warning if fileformat isnt unix
 "set statusline+=%#warningmsg#
 "set statusline+=%{&ff!='unix'?'['.&ff.']':''}
 "set statusline+=%*
+"set statusline+=%{fugitive#statusline()}
 
 "display a warning if file encoding isnt utf-8
 "set statusline+=%#warningmsg#
 "set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
 "set statusline+=%*
 
-set statusline+=%y      "filetype
+"set statusline+=%y      "filetype
 set statusline+=%m      "modified flag
 
 "display a warning if &et is wrong, or we have mixed-indenting
@@ -130,10 +124,10 @@ set statusline+=%m      "modified flag
 "set statusline+=%*
 
 set statusline+=%=      "left/right separator
-set statusline+=%{StatuslineCurrentHighlight()}\  "current highlight
+"set statusline+=%{StatuslineCurrentHighlight()}\  "current highlight
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
+"set statusline+=\ %P    "percent through file
 
 "return the syntax highlight group under the cursor ''
 function! StatuslineCurrentHighlight()

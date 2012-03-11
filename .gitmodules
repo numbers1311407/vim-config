@@ -85,3 +85,15 @@
 [submodule "bundle/colors-maroloccio"]
 	path = bundle/colors-maroloccio
 	url = http://github.com/vim-scripts/maroloccio.git
+[submodule "bundle/syntax-vim-coffee-script"]
+	path = bundle/syntax-vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/syntax-vim-jst"]
+	path = bundle/syntax-vim-jst
+	url = git://github.com/briancollins/vim-jst.git
+[submodule "bundle/jslint"]
+	path = bundle/jslint
+	url = http://github.com/hallettj/jslint.vim.git
+[submodule "vim-repeat"]
+	path = vim-repeat
+	url = git://github.com/tpope/vim-repeat.git
