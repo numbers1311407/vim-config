@@ -264,21 +264,11 @@ nnoremap <silent> - :NERDTreeToggle<CR>
 let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeMapQuit="<Esc>"
 
-
-"-------------------------------------------------------------------------------
-" NERD Commenter
-"-------------------------------------------------------------------------------
-
-" Turns off annoying NERDCommenter error messages
-let g:NERDShutUp=1
-map K <Leader>c<Space>
-
 "-------------------------------------------------------------------------------
 " Bufexplorer
 "-------------------------------------------------------------------------------
 
 let g:bufExplorerDefaultHelp=0
-
 
 "-------------------------------------------------------------------------------
 " SuperTab
