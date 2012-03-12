@@ -88,9 +88,6 @@
 [submodule "bundle/syntax-vim-jst"]
 	path = bundle/syntax-vim-jst
 	url = git://github.com/briancollins/vim-jst.git
-[submodule "bundle/jslint"]
-	path = bundle/jslint
-	url = http://github.com/hallettj/jslint.vim.git
 [submodule "vim-repeat"]
 	path = vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
