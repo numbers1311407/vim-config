@@ -84,9 +84,6 @@ nmap ,j <C-W>j
 nmap ,h <C-W>h
 nmap ,l <C-W>l
 
-"nmap <C-j> <C-d>
-"nmap <C-k> <C-u>
-
 ",s to pull word under cursor into a search/replace (global)
 nmap ,s :%s/<c-r><c-w>//g<Left><Left>
 
@@ -277,8 +274,11 @@ let g:bufExplorerDefaultHelp=0
 let g:SuperTabDefaultCompletionType='context'
 
 "-------------------------------------------------------------------------------
-" BufClose
+" vim-commentary
 "-------------------------------------------------------------------------------
+
+nmap K \\\<CR>
+vmap K \\<CR>
 
 "-------------------------------------------------------------------------------
 " Buftabs
@@ -297,6 +297,10 @@ let g:solarized_termcolors=256
 "-------------------------------------------------------------------------------
 
 nnoremap U :GundoToggle<CR>
+
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
 "let g:CSApprox_hook_post = ['hi Normal  ctermbg=NONE ctermfg=NONE',
                           "\ 'hi NonText ctermbg=NONE ctermfg=NONE' ]
