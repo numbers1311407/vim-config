@@ -206,6 +206,9 @@ let g:miniBufExplorerMoreThanOne=1
 let g:miniBufExplMaxSize=2
 let g:miniBufExplTabWrap=1
 
+map <Leader>t :TMiniBufExplorer<cr>
+
+
 "-------------------------------------------------------------------------------
 " Rails.vim
 "-------------------------------------------------------------------------------
@@ -216,9 +219,6 @@ nnoremap <silent> ,a :A<CR>
 nnoremap <silent> ,,a :AV<CR>
 nnoremap <silent> ,r :R<CR>
 nnoremap <silent> ,,r :RV<CR>
-
-nnoremap ! :!touch tmp/restart.txt<CR><CR>:echo "Passenger restarted..."<CR>
-
 
 "-------------------------------------------------------------------------------
 " FuzzyFileFinder
