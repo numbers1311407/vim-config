@@ -97,6 +97,3 @@
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = git://github.com/wincent/Command-T.git
-[submodule "bundle/minibufexpl"]
-	path = bundle/minibufexpl
-	url = https://github.com/fholgado/minibufexpl.vim.git
