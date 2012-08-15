@@ -23,6 +23,10 @@ nnoremap <silent> <M-n> :cn <cr>
 
 nmap <silent> Q :Kwbd<CR>
 
+" restart node via make task
+nmap <silent> ! :!make restart<CR><CR>:echo 'Restarted Server...'<CR>
+nmap <silent> @ :!make server<CR><CR>:echo 'Started Server...'<CR>
+
 nmap ZZ :qa<CR>
 
 set cf  " Enable error files & error jumping.
