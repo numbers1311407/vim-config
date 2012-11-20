@@ -49,9 +49,6 @@
 [submodule "bundle/csapprox"]
 	path = bundle/csapprox
 	url = git://github.com/godlygeek/csapprox.git
-[submodule "bundle/colors-solarized"]
-	path = bundle/colors-solarized
-	url = git://github.com/tpope/vim-colors-solarized.git
 [submodule "vim-supertab"]
 	path = bundle/vim-supertab
 	url = git://github.com/tsaleh/vim-supertab
