@@ -103,3 +103,9 @@
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
+[submodule "bundle/jade.vim"]
+	path = bundle/jade.vim
+	url = git://github.com/vim-scripts/jade.vim.git
+[submodule "bundle/vim-handlebars"]
+	path = bundle/vim-handlebars
+	url = https://github.com/nono/vim-handlebars.git
