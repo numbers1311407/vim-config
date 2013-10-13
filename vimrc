@@ -22,8 +22,8 @@ nnoremap <silent> <M-n> :cn <cr>
 nmap <silent> Q :Kwbd<CR>
 
 " restart node via make task
-nmap <silent> ! :!make restart<CR><CR>:echo 'Restarted Server...'<CR>
-nmap <silent> @ :!make server<CR><CR>:echo 'Started Server...'<CR>
+nmap <silent> <F1> :!make restart<CR><CR>:echo 'Restarted Server...'<CR>
+nmap <silent> <F2> :!make server<CR><CR>:echo 'Started Server...'<CR>
 
 nmap ZZ :qa<CR>
 
