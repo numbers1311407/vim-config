@@ -57,7 +57,7 @@
 	url = git://github.com/cespare/vim-bclose.git
 [submodule "bundle/vim-l9"]
 	path = bundle/vim-l9
-	url = git@github.com:numbers1311407/vim-l9.git
+	url = git://github.com/numbers1311407/vim-l9.git
 [submodule "tabular"]
 	path = bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
@@ -103,3 +103,6 @@
 [submodule "bundle/vim-handlebars"]
 	path = bundle/vim-handlebars
 	url = https://github.com/nono/vim-handlebars.git
+[submodule "bundle/vim-slim"]
+	path = bundle/vim-slim
+	url = git://github.com/slim-template/vim-slim.git
