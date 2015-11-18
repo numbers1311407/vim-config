@@ -34,7 +34,7 @@ set autowrite  " Writes on make/shell commands
 set ruler  " Ruler on
 set nu  " Line numbers on
 set nowrap  " Line wrapping off
-set timeoutlen=250
+set timeoutlen=350
 
 " Formatting (some of these are for coding in C and C++)
 set ts=2  " Tabs are 2 spaces
@@ -283,8 +283,8 @@ let g:SuperTabDefaultCompletionType='context'
 " vim-commentary
 "-------------------------------------------------------------------------------
 
-nmap K \\\<CR>
-vmap K \\<CR>
+nmap K gcc
+vmap K gc
 
 "-------------------------------------------------------------------------------
 " Buftabs
