@@ -28,9 +28,6 @@
 [submodule "bundle/vim-pastie"]
 	path = bundle/vim-pastie
 	url = git://github.com/tpope/vim-pastie.git
-[submodule "bundle/jQuery"]
-	path = bundle/jQuery
-	url = git://github.com/vim-scripts/jQuery.git
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
