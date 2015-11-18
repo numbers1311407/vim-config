@@ -34,7 +34,7 @@ set autowrite  " Writes on make/shell commands
 set ruler  " Ruler on
 set nu  " Line numbers on
 set nowrap  " Line wrapping off
-set timeoutlen=400
+set timeoutlen=250
 
 " Formatting (some of these are for coding in C and C++)
 set ts=2  " Tabs are 2 spaces
@@ -50,6 +50,7 @@ set formatoptions=tcqr
 set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case
 set cindent
+set tabline=2
 
 " Visual
 set showmatch  " Show matching brackets.
@@ -196,6 +197,9 @@ function! SetCursorPosition()
         endif
     end
 endfunction
+
+" add jbuilder syntax highlighting
+au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
 "-------------------------------------------------------------------------------
 " Minibuffer Explorer Settings
