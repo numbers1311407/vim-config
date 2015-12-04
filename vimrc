@@ -19,7 +19,7 @@ set smartcase
 nnoremap <silent> <M-p> :cp <cr>
 nnoremap <silent> <M-n> :cn <cr>
 
-nmap <silent> Q :Kwbd<CR>
+nmap <silent> Q :bdelete<CR>
 
 " restart node via make task
 nmap <silent> <F1> :!make restart<CR><CR>:echo 'Restarted Server...'<CR>
@@ -293,10 +293,31 @@ vmap K gc
 let g:buftabs_only_basename=1
 
 "-------------------------------------------------------------------------------
+" vim-polyglot
+"-------------------------------------------------------------------------------
+
+
+"-------------------------------------------------------------------------------
 " Solarized
 "-------------------------------------------------------------------------------
 
 let g:solarized_termcolors=256
+
+"-------------------------------------------------------------------------------
+" vim-jsbeautify
+"-------------------------------------------------------------------------------
+
+map <c-f> :call JsBeautify()<cr>
+" or
+" autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
+" " for json 
+" autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+" " for jsx 
+" autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+" " for html
+" autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" " for css or scss
+" autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
 "-------------------------------------------------------------------------------
 " Gundo
