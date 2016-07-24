@@ -62,6 +62,8 @@ set lcs=tab:\ \ ,extends:>,precedes:< ",eol:$,trail:~
 set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
 
+autocmd FileType javascript setlocal cc=80
+
 " macro to automatically switch directories when opening files
 " autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9]*://" | lcd %:p:h | endif
 
@@ -307,7 +309,7 @@ let g:solarized_termcolors=256
 " vim-jsbeautify
 "-------------------------------------------------------------------------------
 
-map <c-f> :call JsBeautify()<cr>
+" map <c-f> :call JsBeautify()<cr>
 " or
 " autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
 " " for json 
@@ -325,6 +327,30 @@ map <c-f> :call JsBeautify()<cr>
 
 nnoremap U :GundoToggle<CR>
 
+"-------------------------------------------------------------------------------
+" syntastic
+"-------------------------------------------------------------------------------
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ["eslint"]
+
+"-------------------------------------------------------------------------------
+" vim-esformatter
+"-------------------------------------------------------------------------------
+
+nnoremap <silent> <c-f> :Esformatter<CR>
+vnoremap <silent> <c-f> :EsformatterVisual<CR>
+
+"-------------------------------------------------------------------------------
+
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
@@ -336,3 +362,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 "colo jellybeans
 colo vilight
 "colo solarized
+"
+"
+
+autocmd VimEnter,Colorscheme * :hi ColorColumn ctermbg=0
