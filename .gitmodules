@@ -1,87 +1,129 @@
-[submodule "bundle/fugitive"]
-	path = bundle/fugitive
+[submodule "pack/bundle/start/fugitive"]
+	path = pack/bundle/start/fugitive
 	url = http://github.com/tpope/vim-fugitive.git
-[submodule "bundle/fuzzy-finder"]
-	path = bundle/fuzzy-finder
-	url = https://github.com/vim-scripts/FuzzyFinder.git
-[submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
-	url = git://github.com/scrooloose/nerdtree.git
-[submodule "bundle/camelcasemotion"]
-	path = bundle/camelcasemotion
+[submodule "pack/bundle/start/camelcasemotion"]
+	path = pack/bundle/start/camelcasemotion
 	url = git://github.com/vim-scripts/camelcasemotion.git
-[submodule "bundle/IndexedSearch"]
-	path = bundle/IndexedSearch
+[submodule "pack/bundle/start/IndexedSearch"]
+	path = pack/bundle/start/IndexedSearch
 	url = git://github.com/vim-scripts/IndexedSearch.git
-[submodule "bundle/loremipsum"]
-	path = bundle/loremipsum
-	url = git://github.com/vim-scripts/loremipsum.git
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
+[submodule "pack/bundle/start/vim-surround"]
+	path = pack/bundle/start/vim-surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "bundle/vim-pastie"]
-	path = bundle/vim-pastie
-	url = git://github.com/tpope/vim-pastie.git
-[submodule "bundle/vim-vividchalk"]
-	path = bundle/colors-vividchalk
-	url = git://github.com/tpope/vim-vividchalk.git
-[submodule "bundle/csapprox"]
-	path = bundle/csapprox
+[submodule "pack/bundle/start/csapprox"]
+	path = pack/bundle/start/csapprox
 	url = git://github.com/godlygeek/csapprox.git
-[submodule "bundle/vim-l9"]
-	path = bundle/vim-l9
-	url = git://github.com/numbers1311407/vim-l9.git
-[submodule "tabular"]
-	path = bundle/tabular
+[submodule "pack/git-plubins/start/tabular"]
+	path = pack/bundle/start/tabular
 	url = git://github.com/godlygeek/tabular.git
-[submodule "bundle/colors-jellybeans"]
-	path = bundle/colors-jellybeans
+[submodule "pack/bundle/start/colors-jellybeans"]
+	path = pack/bundle/start/colors-jellybeans
 	url = git://github.com/nanotech/jellybeans.vim.git
-[submodule "bundle/colors-twilight256"]
-	path = bundle/colors-twilight256
-	url = git://github.com/vim-scripts/twilight256.vim.git
-[submodule "bundle/gundo"]
-	path = bundle/gundo
+[submodule "pack/bundle/start/gundo"]
+	path = pack/bundle/start/gundo
 	url = http://github.com/sjl/gundo.vim.git
-[submodule "bundle/ack"]
-	path = bundle/ack
+[submodule "pack/bundle/start/ack"]
+	path = pack/bundle/start/ack
 	url = http://github.com/vim-scripts/ack.vim.git
-[submodule "bundle/colors-maroloccio"]
-	path = bundle/colors-maroloccio
+[submodule "pack/bundle/start/colors-maroloccio"]
+	path = pack/bundle/start/colors-maroloccio
 	url = http://github.com/vim-scripts/maroloccio.git
-[submodule "bundle/vim-commentary"]
-	path = bundle/vim-commentary
+[submodule "pack/bundle/start/vim-commentary"]
+	path = pack/bundle/start/vim-commentary
 	url = git://github.com/tpope/vim-commentary.git
-[submodule "bundle/vim-repeat"]
-	path = bundle/vim-repeat
+[submodule "pack/bundle/start/vim-repeat"]
+	path = pack/bundle/start/vim-repeat
 	url = git://github.com/tpope/vim-repeat
-[submodule "bundle/jshint"]
-	path = bundle/jshint
-	url = https://github.com/walm/jshint.vim
-[submodule "bundle/jade.vim"]
-	path = bundle/jade.vim
+[submodule "pack/bundle/start/jade.vim"]
+	path = pack/bundle/start/jade.vim
 	url = git://github.com/vim-scripts/jade.vim.git
-[submodule "bundle/supertab"]
-	path = bundle/supertab
+[submodule "pack/bundle/start/supertab"]
+	path = pack/bundle/start/supertab
 	url = https://github.com/ervandew/supertab.git
-[submodule "bundle/vim-polyglot"]
-	path = bundle/vim-polyglot
+[submodule "pack/bundle/start/vim-polyglot"]
+	path = pack/bundle/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
-[submodule "bundle/vim-jsbeautify"]
-	path = bundle/vim-jsbeautify
-	url = https://github.com/maksimr/vim-jsbeautify.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = git://github.com/scrooloose/syntastic.git
-[submodule "bundle/vim-esformatter"]
-	path = bundle/vim-esformatter
-	url = https://github.com/millermedeiros/vim-esformatter
-[submodule "bundle/gist-vim"]
-	path = bundle/gist-vim
+[submodule "pack/bundle/start/gist-vim"]
+	path = pack/bundle/start/gist-vim
 	url = https://github.com/mattn/gist-vim
-[submodule "bundle/webapi-vim"]
-	path = bundle/webapi-vim
+[submodule "pack/bundle/start/webapi-vim"]
+	path = pack/bundle/start/webapi-vim
 	url = https://github.com/mattn/webapi-vim
-[submodule "bundle/vim-jsx"]
-	path = bundle/vim-jsx
+[submodule "pack/bundle/start/vim-jsx"]
+	path = pack/bundle/start/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
+[submodule "pack/bundle/start/fzf"]
+	path = pack/bundle/start/fzf
+	url = https://github.com/junegunn/fzf
+[submodule "pack/bundle/start/bclose.vim"]
+	path = pack/bundle/start/bclose.vim
+	url = https://github.com/rbgrouleff/bclose.vim
+[submodule "pack/bundle/start/fzf.vim"]
+	path = pack/bundle/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "pack/bundle/start/lightline.vim"]
+	path = pack/bundle/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule "pack/bundle/start/ale"]
+	path = pack/bundle/start/ale
+	url = https://github.com/w0rp/ale.git
+[submodule "pack/bundle/start/vim-fugitive"]
+	path = pack/bundle/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "pack/bundle/start/camelcasemotion"]
+	path = pack/bundle/start/camelcasemotion
+	url = https://github.com/vim-scripts/camelcasemotion
+[submodule "pack/bundle/start/IndexedSearch"]
+	path = pack/bundle/start/IndexedSearch
+	url = https://github.com/vim-scripts/IndexedSearch
+[submodule "pack/bundle/start/vim-surround"]
+	path = pack/bundle/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "pack/bundle/start/csapprox"]
+	path = pack/bundle/start/csapprox
+	url = https://github.com/godlygeek/csapprox
+[submodule "pack/bundle/start/tabular"]
+	path = pack/bundle/start/tabular
+	url = https://github.com/godlygeek/tabular
+[submodule "pack/bundle/start/jellybeans.vim"]
+	path = pack/bundle/start/jellybeans.vim
+	url = https://github.com/nanotech/jellybeans.vim
+[submodule "pack/bundle/start/gundo.vim"]
+	path = pack/bundle/start/gundo.vim
+	url = https://github.com/sjl/gundo.vim
+[submodule "pack/bundle/start/ack.vim"]
+	path = pack/bundle/start/ack.vim
+	url = https://github.com/vim-scripts/ack.vim
+[submodule "pack/bundle/start/vim-commentary"]
+	path = pack/bundle/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "pack/bundle/start/vim-repeat"]
+	path = pack/bundle/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "pack/bundle/start/supertab"]
+	path = pack/bundle/start/supertab
+	url = https://github.com/ervandew/supertab
+[submodule "pack/bundle/start/vim-polyglot"]
+	path = pack/bundle/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule "pack/bundle/start/fzf"]
+	path = pack/bundle/start/fzf
+	url = https://github.com/junegunn/fzf
+[submodule "pack/bundle/start/fzf.vim"]
+	path = pack/bundle/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "pack/bundle/start/bclose.vim"]
+	path = pack/bundle/start/bclose.vim
+	url = https://github.com/rbgrouleff/bclose.vim
+[submodule "pack/bundle/start/lightline.vim"]
+	path = pack/bundle/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule "pack/bundle/start/ale"]
+	path = pack/bundle/start/ale
+	url = https://github.com/w0rp/ale
+[submodule "pack/bundle/start/vim-javascript"]
+	path = pack/bundle/start/vim-javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule "pack/bundle/start/vilight.vim"]
+	path = pack/bundle/start/vilight.vim
+	url = https://github.com/vim-scripts/vilight.vim

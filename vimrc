@@ -1,45 +1,27 @@
 set nocompatible
 
-call pathogen#infect()
+" call pathogen#infect()
 filetype on
+filetype plugin on
+filetype indent on
 
 syntax enable
  
 let mapleader=","
 
-" maps esc to break out of autocompletion and reset to 
-" original word
-inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
-
 set ignorecase
 set smartcase
-
-" alt+n or alt+p to navigate between entries in QuickFix
-" (this isn't working, think it's a shell thing with alt)
-nnoremap <silent> <M-p> :cp <cr>
-nnoremap <silent> <M-n> :cn <cr>
-
-nmap <silent> Q :bdelete<CR>
-
-" restart node via make task
-nmap <silent> <F1> :!make restart<CR><CR>:echo 'Restarted Server...'<CR>
-nmap <silent> <F2> :!make server<CR><CR>:echo 'Started Server...'<CR>
-
-nmap ZZ :qa<CR>
-
-set cf  " Enable error files & error jumping.
-set clipboard+=unnamed  " Yanks go on clipboard instead.
-set history=256  " Number of things to remember in history.
-set autowrite  " Writes on make/shell commands
-set ruler  " Ruler on
-set nu  " Line numbers on
-set nowrap  " Line wrapping off
-set timeoutlen=350
-
-" Formatting (some of these are for coding in C and C++)
-set ts=2  " Tabs are 2 spaces
-set bs=2  " Backspace over everything in insert mode
-set shiftwidth=2  " Tabs under smart indent
+set cf                                        " Enable error files & error jumping.
+set clipboard+=unnamed                        " Yanks go on clipboard instead.
+set history=256                               " Number of things to remember in history.
+set autowrite                                 " Writes on make/shell commands
+set ruler                                     " Ruler on
+set nu                                        " Line numbers on
+set nowrap                                    " Line wrapping off
+set timeoutlen=350                            " Timeout for chained commands (leader, etc)
+set ts=2                                      " Tabs are 2 spaces
+set bs=2                                      " Backspace over everything in insert mode
+set shiftwidth=2                              " Tabs under smart indent
 set softtabstop=2
 set expandtab
 set smarttab
@@ -51,130 +33,51 @@ set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case
 set cindent
 set tabline=2
-
-" Visual
-set showmatch  " Show matching brackets.
-set showcmd     "show incomplete cmds down the bottom
-set showmode    "show current mode down the bottom
-set mat=5       " Bracket blinking.
+set showmatch                                 " Show matching brackets.
+set showcmd                                   " show incomplete cmds down the bottom
+set showmode                                  " show current mode down the bottom
+set mat=5                                     " Bracket blinking.
 set list
-set lcs=tab:\ \ ,extends:>,precedes:< ",eol:$,trail:~
-set noerrorbells  " No noise.
-set laststatus=2  " Always show status line.
+set lcs=tab:\ \ ,extends:>,precedes:<         " ,eol:$,trail:~
+set noerrorbells                              " No noise.
+set laststatus=2                              " Always show status line.
+set backspace=indent,eol,start                " allow backspacing over everything in insert mode
+set linebreak                                 " wrap lines at convenient points
+set foldmethod=indent                         " fold based on indent
+set foldnestmax=3                             " deepest fold is 3 levels
+set nofoldenable                              " dont fold by default
+set wildmode=list:longest                     " make cmdline tab completion similar to bash
+set wildmenu                                  " enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*~                   " stuff to ignore when tab completing
+set formatoptions-=o                          " dont continue comments when pushing o/O
+set scrolloff=3
+set sidescrolloff=7
+set sidescroll=5
+set scrolljump=3
+set hidden
+set mousehide                                 " Hide mouse after chars typed
+set mouse=a                                   " Mouse in all modes
+set guioptions-=rRlLTm
 
-autocmd FileType javascript setlocal cc=80
-
-" macro to automatically switch directories when opening files
-" autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9]*://" | lcd %:p:h | endif
-
-autocmd QuickfixCmdPost grep,vimgrep,make cw
-
-"map <silent> ,cd :cd %:p:h<CR>
-
-let g:plaintex_delimiters = 0
-
-hi Pmenu ctermbg=238 ctermfg=0 gui=bold
-hi PmenuSel ctermfg=0 ctermbg=7 
-hi Normal ctermbg=black
-
-" left/right arrows change buffers
-map <silent> <C-right> :bn<CR>
-map <silent> <C-left> :bp<CR>
+" cycle through buffers with H and L
 map <silent> H :bp<CR>
 map <silent> L :bn<CR>
 
-" comma+dir for directional buffer nav
-nmap ,k <C-W>k
-nmap ,j <C-W>j
-nmap ,h <C-W>h
-nmap ,l <C-W>l
+" leader+direction for directional buffer nav
+nmap <Leader>k <C-W>k
+nmap <Leader>j <C-W>j
+nmap <Leader>h <C-W>h
+nmap <Leader>l <C-W>l
 
-",s to pull word under cursor into a search/replace (global)
-nmap ,s :%s/<c-r><c-w>//g<Left><Left>
+" leader+s to pull word under cursor into a search/replace (global)
+nmap <Leader>s :%s/<c-r><c-w>//g<Left><Left>
 
-"allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-set linebreak   "wrap lines at convenient points
+" maps esc to break out of autocompletion and reset to 
+" original word
+inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 
-"statusline setup
-set statusline+=%n:   "buffer number
-set statusline+=%f   "relative filename
-
-"display a warning if fileformat isnt unix
-"set statusline+=%#warningmsg#
-"set statusline+=%{&ff!='unix'?'['.&ff.']':''}
-"set statusline+=%*
-"set statusline+=%{fugitive#statusline()}
-
-"display a warning if file encoding isnt utf-8
-"set statusline+=%#warningmsg#
-"set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
-"set statusline+=%*
-
-"set statusline+=%y      "filetype
-set statusline+=%m      "modified flag
-
-"display a warning if &et is wrong, or we have mixed-indenting
-"set statusline+=%#error#
-"set statusline+=%{StatuslineTabWarning()}
-"set statusline+=%*
-
-
-"display a warning if &paste is set
-"set statusline+=%#error#
-"set statusline+=%{&paste?'[paste]':''}
-"set statusline+=%*
-
-set statusline+=%=      "left/right separator
-"set statusline+=%{StatuslineCurrentHighlight()}\  "current highlight
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-"set statusline+=\ %P    "percent through file
-
-"return the syntax highlight group under the cursor ''
-function! StatuslineCurrentHighlight()
-    let name = synIDattr(synID(line('.'),col('.'),1),'name')
-    if name == ''
-        return ''
-    else
-        return '[' . name . ']'
-    endif
-endfunction
-
-"folding settings
-set foldmethod=indent   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
-
-set wildmode=list:longest   "make cmdline tab completion similar to bash
-set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
-
-set formatoptions-=o "dont continue comments when pushing o/O
-
-"vertical/horizontal scroll off settings
-set scrolloff=3
-set sidescrolloff=7
-set sidescroll=1
-
-"load ftplugins and indent files
-filetype plugin on
-filetype indent on
-
-"hide buffers when not displayed
-set hidden
-
-" note for whatever reason ttymouse must be set after term is set
-" or it will cause problems with the terminal
-
-set mousehide  " Hide mouse after chars typed
-set mouse=a  " Mouse in all modes
-set guioptions-=rRlLTm
-
-"make <c-l> clear the highlight as well as redraw
-"nnoremap <C-L> :nohls<CR><C-L>
-"inoremap <C-L> <C-O>:nohls<CR>
-
+nmap <silent> Q :bdelete<CR>
+nmap ZZ :qa<CR>
 
 "make Y consistent with C and D
 nnoremap Y y$
@@ -203,77 +106,55 @@ endfunction
 " add jbuilder syntax highlighting
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
-"-------------------------------------------------------------------------------
-" Minibuffer Explorer Settings
-"-------------------------------------------------------------------------------
-
-"let g:miniBufExplMapWindowNavVim = 1
-"let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs=1
-let g:miniBufExplorerMoreThanOne=1 
-let g:miniBufExplMaxSize=2
-let g:miniBufExplTabWrap=1
-
-map <Leader>t :TMiniBufExplorer<cr>
-
+" force backupcopy=yes for js, this fixes an issue with webpack file watch
+au BufNewFile,BufReadPre *.js set backupcopy=yes
 
 "-------------------------------------------------------------------------------
-" Rails.vim
+" FZF
 "-------------------------------------------------------------------------------
 
-" Change which file opens after executing :Rails command
-let g:rails_default_file='config/database.yml'
-nnoremap <silent> ,a :A<CR>
-nnoremap <silent> ,,a :AV<CR>
-nnoremap <silent> ,r :R<CR>
-nnoremap <silent> ,,r :RV<CR>
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
 
-"-------------------------------------------------------------------------------
-" FuzzyFileFinder
-"-------------------------------------------------------------------------------
+" Default fzf layout
+" - down / up / left / right
+let g:fzf_layout = { 'down': '~40%' }
 
-let g:fuf_modesDisable = []
-let g:fuf_abbrevMap = {
-      \   '^vr:' : map(filter(split(&runtimepath, ','), 'v:val !~ "after$"'), 'v:val . ''/**/'''),
-      \   '^m0:' : [ '/mnt/d/0/', '/mnt/j/0/' ],
-      \ }
-let g:fuf_mrufile_maxItem = 100 
-let g:fuf_mrucmd_maxItem = 100
-let g:fuf_previewHeight = 0
+" In Neovim, you can set up fzf window using a Vim command
+" let g:fzf_layout = { 'window': 'enew' }
+" let g:fzf_layout = { 'window': '-tabnew' }
+" let g:fzf_layout = { 'window': '10split enew' }
 
-" not sure if this one was for fuf_textmate
-let g:fuzzy_ignore = "gems/*;*.pyc;*.log;*.swf;*.fla"
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
-nnoremap <silent> <C-n>      :FufBuffer<CR>
-nnoremap <silent> <C-p>      :FufFileWithCurrentBufferDir<CR>
-nnoremap <silent> <C-f>      :FufFile<CR>
+" Enable per-command history.
+" CTRL-N and CTRL-P will be automatically bound to next-history and
+" previous-history instead of down and up. If you don't like the change,
+" explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
+let g:fzf_history_dir = '~/.local/share/fzf-history'"
 
-"nnoremap <silent> <C-f><C-p> :FufFileWithFullCwd<CR>
-"nnoremap <silent> <C-f>d     :FufDirWithCurrentBufferDir<CR>
-"nnoremap <silent> <C-f><C-d> :FufDirWithFullCwd<CR>
-"nnoremap <silent> <C-f>D     :FufDir<CR>
-"nnoremap <silent> <C-f>r     :FufMruFile<CR>
+nnoremap <silent> <C-f> :Files<CR>
+nnoremap <silent> <C-p> :Files %:h<CR>
+nnoremap <silent> <C-n> :Buffers<CR>
 
-"nnoremap <silent> <C-f><C-t> :FufTag<CR>
-"nnoremap <silent> <C-f>t     :FufTag!<CR>
-"noremap  <silent> g]         :FufTagWithCursorWord!<CR>
-"nnoremap <silent> <C-f><C-f> :FufTaggedFile<CR>
-
-
-"-------------------------------------------------------------------------------
-" NERD Tree
-"-------------------------------------------------------------------------------
-
-nnoremap <silent> - :NERDTreeToggle<CR>
-" close tree when opening a file
-let g:NERDTreeQuitOnOpen=1
-let g:NERDTreeMapQuit="<Esc>"
-
-"-------------------------------------------------------------------------------
-" Bufexplorer
-"-------------------------------------------------------------------------------
-
-let g:bufExplorerDefaultHelp=0
+" map netrw to ctrl-p (which opens by default in current directory)
+nnoremap <silent> - :Vexplore<CR>
 
 "-------------------------------------------------------------------------------
 " SuperTab
@@ -289,80 +170,32 @@ nmap K gcc
 vmap K gc
 
 "-------------------------------------------------------------------------------
-" Buftabs
-"-------------------------------------------------------------------------------
-
-let g:buftabs_only_basename=1
-
-"-------------------------------------------------------------------------------
-" vim-polyglot
-"-------------------------------------------------------------------------------
-
-
-"-------------------------------------------------------------------------------
-" Solarized
-"-------------------------------------------------------------------------------
-
-let g:solarized_termcolors=256
-
-"-------------------------------------------------------------------------------
-" vim-jsbeautify
-"-------------------------------------------------------------------------------
-
-" map <c-f> :call JsBeautify()<cr>
-" or
-" autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
-" " for json 
-" autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
-" " for jsx 
-" autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
-" " for html
-" autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-" " for css or scss
-" autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
-
-"-------------------------------------------------------------------------------
 " Gundo
 "-------------------------------------------------------------------------------
 
 nnoremap U :GundoToggle<CR>
 
 "-------------------------------------------------------------------------------
-" syntastic
+" vim-jsx
 "-------------------------------------------------------------------------------
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_javascript_checkers = ["eslint"]
+let g:jsx_ext_required = 1
 
 "-------------------------------------------------------------------------------
-" vim-esformatter
+" lightline.vim
 "-------------------------------------------------------------------------------
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ }
 
-nnoremap <silent> <c-f> :Esformatter<CR>
-vnoremap <silent> <c-f> :EsformatterVisual<CR>
+"-------------------------------------------------------------------------------
+" ack.vim
+"-------------------------------------------------------------------------------
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 "-------------------------------------------------------------------------------
 
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-
-"let g:CSApprox_hook_post = ['hi Normal  ctermbg=NONE ctermfg=NONE',
-                          "\ 'hi NonText ctermbg=NONE ctermfg=NONE' ]
-
-"colo twilight256
-"colo jellybeans
+" colo jellybeans
 colo vilight
-"colo solarized
-"
-"
-
-autocmd VimEnter,Colorscheme * :hi ColorColumn ctermbg=0
