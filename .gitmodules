@@ -127,3 +127,12 @@
 [submodule "pack/bundle/start/vilight.vim"]
 	path = pack/bundle/start/vilight.vim
 	url = https://github.com/vim-scripts/vilight.vim
+[submodule "pack/bundle/start/nerdtree"]
+	path = pack/bundle/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "pack/bundle/start/denite.nvim"]
+	path = pack/bundle/start/denite.nvim
+	url = https://github.com/Shougo/denite.nvim
+[submodule "pack/bundle/start/vim-autotag"]
+	path = pack/bundle/start/vim-autotag
+	url = https://github.com/craigemery/vim-autotag

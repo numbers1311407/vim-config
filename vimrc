@@ -1,6 +1,5 @@
 set nocompatible
 
-" call pathogen#infect()
 filetype on
 filetype plugin on
 filetype indent on
@@ -58,6 +57,7 @@ set hidden
 set mousehide                                 " Hide mouse after chars typed
 set mouse=a                                   " Mouse in all modes
 set guioptions-=rRlLTm
+" set relativenumber
 
 " cycle through buffers with H and L
 map <silent> H :bp<CR>
@@ -109,6 +109,18 @@ au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 " force backupcopy=yes for js, this fixes an issue with webpack file watch
 au BufNewFile,BufReadPre *.js set backupcopy=yes
 
+" Open grep commands in quickfix (this includes vim-fugitive log, etc)
+au QuickFixCmdPost *grep* cwindow
+
+" ripgrep
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --no-heading\ -S
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+
+" map netrw to - (this is helpful to make it behave like NerdTree)
+" nnoremap <silent> - :Vexplore<CR>
+
 "-------------------------------------------------------------------------------
 " FZF
 "-------------------------------------------------------------------------------
@@ -149,12 +161,10 @@ let g:fzf_colors =
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let g:fzf_history_dir = '~/.local/share/fzf-history'"
 
-nnoremap <silent> <C-f> :Files<CR>
-nnoremap <silent> <C-p> :Files %:h<CR>
+nnoremap <silent> <Leader>a :Ag<CR>
+nnoremap <silent> <Leader>f :Files<CR>
+nnoremap <silent> <Leader>t :Tags<CR>
 nnoremap <silent> <C-n> :Buffers<CR>
-
-" map netrw to ctrl-p (which opens by default in current directory)
-nnoremap <silent> - :Vexplore<CR>
 
 "-------------------------------------------------------------------------------
 " SuperTab
@@ -168,6 +178,15 @@ let g:SuperTabDefaultCompletionType='context'
 
 nmap K gcc
 vmap K gc
+
+"-------------------------------------------------------------------------------
+" NERDTree
+"-------------------------------------------------------------------------------
+nmap - :NERDTreeToggle<CR>
+nmap <C-p> :NERDTreeCWD<CR>
+let NERDTreeQuitOnOpen=1
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
 
 "-------------------------------------------------------------------------------
 " Gundo
@@ -194,6 +213,13 @@ let g:lightline = {
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+"-------------------------------------------------------------------------------
+" ale
+"-------------------------------------------------------------------------------
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
 
 "-------------------------------------------------------------------------------
 
