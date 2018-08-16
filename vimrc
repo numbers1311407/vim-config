@@ -112,12 +112,6 @@ au BufNewFile,BufReadPre *.js set backupcopy=yes
 " Open grep commands in quickfix (this includes vim-fugitive log, etc)
 au QuickFixCmdPost *grep* cwindow
 
-" ripgrep
-if executable('rg')
-  set grepprg=rg\ --vimgrep\ --no-heading\ -S
-  set grepformat=%f:%l:%c:%m,%f:%l:%m
-endif
-
 "-------------------------------------------------------------------------------
 " FZF
 "-------------------------------------------------------------------------------
@@ -140,7 +134,7 @@ let g:fzf_layout = { 'down': '~40%' }
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
+  \ 'bg':      ['bg', 'NoNormalrmal'],
   \ 'hl':      ['fg', 'Comment'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
@@ -158,10 +152,13 @@ let g:fzf_colors =
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let g:fzf_history_dir = '~/.local/share/fzf-history'"
 
-nnoremap <silent> <Leader>a :Ag<CR>
+autocmd! VimEnter * command! -nargs=* -complete=file AgC :call fzf#vim#ag_raw('--context 0 --path-to-ignore ~/.ag-ignore --nogroup --color --color-path "37" --color-match "1;37" --color-line-number "1;36" '. <q-args>)
+
+nnoremap <silent> <Leader>a :AgC .<CR>
 nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <Leader>t :Tags<CR>
 nnoremap <silent> <C-n> :Buffers<CR>
+nnoremap <silent> <C-p> :Files %:h<CR>
 
 "-------------------------------------------------------------------------------
 " SuperTab
@@ -200,7 +197,15 @@ let g:lightline = {
 "-------------------------------------------------------------------------------
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
+  set grepprg=ag\ --vimgrep\ --silent\ --nocolor\ --nogroup\ --nobreak
+  set grepformat=%f:%l:%m:%c,%f:%l:%m
 endif
+
+" if executable('rg')
+"   let g:ackprg = 'rg --vimgrep'
+"   set grepprg=rg\ --vimgrep\ --no-heading\ -S
+"   set grepformat=%f:%l:%c:%m,%f:%l:%m
+" endif
 
 "-------------------------------------------------------------------------------
 " ale
