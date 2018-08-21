@@ -136,3 +136,12 @@
 [submodule "pack/bundle/start/vim-vinegar"]
 	path = pack/bundle/start/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar
+[submodule "pack/bundle/start/vim-projectionist"]
+	path = pack/bundle/start/vim-projectionist
+	url = https://github.com/tpope/vim-projectionist
+[submodule "pack/bundle/start/vim-dispatch"]
+	path = pack/bundle/start/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch
+[submodule "pack/bundle/start/vim-ruby"]
+	path = pack/bundle/start/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby

@@ -152,9 +152,9 @@ let g:fzf_colors =
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let g:fzf_history_dir = '~/.local/share/fzf-history'"
 
-autocmd! VimEnter * command! -nargs=* -complete=file AgC :call fzf#vim#ag_raw('--context 0 --path-to-ignore ~/.ag-ignore --nogroup --color --color-path "37" --color-match "1;37" --color-line-number "1;36" '. <q-args>)
+" autocmd! VimEnter * command! -nargs=* -complete=file AgC :call fzf#vim#ag_raw('--context 0 --path-to-ignore ~/.ag-ignore --nogroup --color --color-path "37" --color-match "1;37" --color-line-number "1;36" '. <q-args>)
 
-nnoremap <silent> <Leader>a :AgC .<CR>
+nnoremap <silent> <Leader>a :Ag .<CR>
 nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <Leader>t :Tags<CR>
 nnoremap <silent> <C-n> :Buffers<CR>
@@ -213,6 +213,26 @@ endif
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
+let g:ale_enabled = 0 " ale starts disabled on opening vim
+
+"-------------------------------------------------------------------------------
+" vim-commentary
+"-------------------------------------------------------------------------------
+let g:netrw_banner = 1
+
+
+"-------------------------------------------------------------------------------
+" vim-dispatch
+"-------------------------------------------------------------------------------
+let g:dispatch_compilers = { 
+      \ './node_modules/.bin/mocha': 'mochajs',
+      \ 'bundle exec': '' }
+
+"-------------------------------------------------------------------------------
+" vim-polyglot
+"-------------------------------------------------------------------------------
+" mocha tests were being detected as jasmine (and I don't use jasmine)
+let g:polyglot_disabled = ['jasmine']
 
 "-------------------------------------------------------------------------------
 
