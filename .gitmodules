@@ -1,9 +1,6 @@
 [submodule "pack/bundle/start/fugitive"]
 	path = pack/bundle/start/fugitive
 	url = http://github.com/tpope/vim-fugitive.git
-[submodule "pack/bundle/start/camelcasemotion"]
-	path = pack/bundle/start/camelcasemotion
-	url = git://github.com/vim-scripts/camelcasemotion.git
 [submodule "pack/bundle/start/IndexedSearch"]
 	path = pack/bundle/start/IndexedSearch
 	url = git://github.com/vim-scripts/IndexedSearch.git
@@ -70,9 +67,6 @@
 [submodule "pack/bundle/start/vim-fugitive"]
 	path = pack/bundle/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "pack/bundle/start/camelcasemotion"]
-	path = pack/bundle/start/camelcasemotion
-	url = https://github.com/vim-scripts/camelcasemotion
 [submodule "pack/bundle/start/IndexedSearch"]
 	path = pack/bundle/start/IndexedSearch
 	url = https://github.com/vim-scripts/IndexedSearch
@@ -145,3 +139,6 @@
 [submodule "pack/bundle/start/vim-ruby"]
 	path = pack/bundle/start/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby
+[submodule "pack/bundle/start/ultisnips"]
+	path = pack/bundle/start/ultisnips
+	url = https://github.com/SirVer/ultisnips
