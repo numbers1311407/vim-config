@@ -213,7 +213,11 @@ endif
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
-let g:ale_enabled = 0 " ale starts disabled on opening vim
+let g:ale_enabled = 1 " ale starts disabled on opening vim
+let g:ale_pattern_options = {
+      \  '.*\.json$': {'ale_enabled': 0},
+      \  '.*\.spec\.js$': {'ale_enabled': 0},
+      \}
 
 "-------------------------------------------------------------------------------
 " vim-commentary
