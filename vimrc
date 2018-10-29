@@ -238,7 +238,14 @@ let g:dispatch_compilers = {
 " mocha tests were being detected as jasmine (and I don't use jasmine)
 let g:polyglot_disabled = ['jasmine']
 
+
 "-------------------------------------------------------------------------------
+" Ultisnips
+"-------------------------------------------------------------------------------
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " colo jellybeans
 colo vilight

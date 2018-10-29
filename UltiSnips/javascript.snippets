@@ -1,0 +1,75 @@
+priority -50
+
+
+snippet des "describe" b
+describe('${1:description}', () => {
+  $0
+})
+endsnippet
+
+snippet con "context" b
+context('${1:context}', () => {
+  $0
+})
+endsnippet
+
+snippet it "it (js)" b
+it('${1:description}', () => {
+  $0
+})
+endsnippet
+
+snippet bef "before each (js)" b
+beforeEach(() => {
+  $0
+})
+endsnippet
+
+snippet aft "after each (js)" b
+afterEach(() => {
+  $0
+})
+endsnippet
+
+snippet befa "before all (js)" b
+beforeAll(() => {
+  $0
+})
+endsnippet
+
+snippet afta "after all (js)" b
+afterAll(() => {
+  $0
+})
+endsnippet
+
+snippet ru "runs (js)" b
+runs(() => {
+  $0
+})
+endsnippet
+
+snippet exp "expect(...)" b
+expect(${1:expectation})$0
+endsnippet
+
+snippet shallowed "shallowed test setup" b
+let subject, props, instance, Component
+
+const shallowed = () => {
+	if (!subject) {
+		subject = shallow(<Component {...props} />)
+		instance = subject.instance()
+	}
+	return subject
+}
+
+beforeEach(() => {
+	Component = ${1:Component}
+	subject = null
+	instance = null
+	props = {
+		$0
+	}
+})
+endsnippet
