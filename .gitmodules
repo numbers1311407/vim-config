@@ -142,3 +142,15 @@
 [submodule "pack/bundle/start/ultisnips"]
 	path = pack/bundle/start/ultisnips
 	url = https://github.com/SirVer/ultisnips
+[submodule "pack/bundle/start/CamelCaseMotion"]
+	path = pack/bundle/start/CamelCaseMotion
+	url = https://github.com/bkad/CamelCaseMotion
+[submodule "pack/bundle/start/vim-test"]
+	path = pack/bundle/start/vim-test
+	url = https://github.com/janko-m/vim-test
+[submodule "pack/bundle/start/vim-css-color"]
+	path = pack/bundle/start/vim-css-color
+	url = https://github.com/ap/vim-css-color.git
+[submodule "pack/bundle/start/nerdtree"]
+	path = pack/bundle/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git

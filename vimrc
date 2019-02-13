@@ -230,8 +230,8 @@ let g:netrw_banner = 1
 "-------------------------------------------------------------------------------
 let g:dispatch_compilers = { 
       \ './node_modules/.bin/mocha': 'mochajs',
+      \ 'yarn run jest': 'jest',
       \ 'bundle exec': '' }
-
 "-------------------------------------------------------------------------------
 " vim-polyglot
 "-------------------------------------------------------------------------------
@@ -246,6 +246,25 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+"-------------------------------------------------------------------------------
+" CamelCaseMotion
+"-------------------------------------------------------------------------------
+map <silent> <Leader>w <Plug>CamelCaseMotion_w
+map <silent> <Leader>b <Plug>CamelCaseMotion_b
+map <silent> <Leader>e <Plug>CamelCaseMotion_e
+map <silent> <Leader>ge <Plug>CamelCaseMotion_ge
+omap <silent> <Leader>iw <Plug>CamelCaseMotion_iw
+xmap <silent> <Leader>iw <Plug>CamelCaseMotion_iw
+omap <silent> <Leader>ib <Plug>CamelCaseMotion_ib
+xmap <silent> <Leader>ib <Plug>CamelCaseMotion_ib
+omap <silent> <Leader>ie <Plug>CamelCaseMotion_ie
+xmap <silent> <Leader>ie <Plug>CamelCaseMotion_ie"
+
+"-------------------------------------------------------------------------------
+" NERDTree
+"-------------------------------------------------------------------------------
+map - :NERDTreeToggle<CR>
 
 " colo jellybeans
 colo vilight
